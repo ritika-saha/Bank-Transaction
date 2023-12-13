@@ -11,16 +11,14 @@ public class Customer extends Thread {
     public void run() {
         for (int i = 0; i < 3; i++) {
             int randomAmount = (int) (Math.random() * 100) + 1; // Random amount between 1 and 100
-            int randomAccount = (int) (Math.random() * 5) + 1; // Random account between 1 and 5
-
             if (i % 2 == 0) {
-                bank.deposit(randomAccount, randomAmount);
+                bank.deposit(customerId, randomAmount);
             } else {
-                bank.withdraw(randomAccount, randomAmount);
+                bank.withdraw(customerId, randomAmount);
             }
 
             try {
-                Thread.sleep(100); // Simulating some processing time between transactions
+                Thread.sleep(2000); // Simulating some processing time between transactions
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
