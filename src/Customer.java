@@ -9,7 +9,7 @@ public class Customer extends Thread {
 
     @Override
     public void run() {
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 2; i++) {
             int randomAmount = (int) (Math.random() * 100) + 1; // Random amount between 1 and 100
             if (i % 2 == 0) {
                 bank.deposit(customerId, randomAmount);

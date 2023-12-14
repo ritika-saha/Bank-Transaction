@@ -3,7 +3,7 @@ public class Bank {
     private HashMap<Integer, Integer> accounts = new HashMap<>();
 
     public synchronized void deposit(int accountNumber, int amount) {
-        int balance = accounts.getOrDefault(accountNumber, 0);
+        int balance = accounts.getOrDefault(accountNumber, 500);
         balance += amount;
         accounts.put(accountNumber, balance);
         System.out.println("Deposited " + amount + " into account " + accountNumber + ". New balance: " + balance);
